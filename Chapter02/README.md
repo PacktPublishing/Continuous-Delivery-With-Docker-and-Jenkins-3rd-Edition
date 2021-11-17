@@ -1,6 +1,6 @@
 # Chapter 2: Introducing Docker
 
-All the instructions assumes you have Docker (Community Edition) installed and configured on your machine.
+All the instructions assumes you have Docker installed and configured on your machine.
 
 ## Code Samples
 
