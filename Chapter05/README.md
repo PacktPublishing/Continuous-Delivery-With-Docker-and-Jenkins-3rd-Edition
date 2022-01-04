@@ -128,7 +128,7 @@ The [sample4](sample4) includes a Spring Boot Application with the Acceptance Te
 
 You can run the acceptance test with the following command:
 
-    $ ./gradlew acceptanceTest -Dcalculator.url=http://localhost:8765
+    $ ./gradlew acceptanceTest -Dcalculator.url=http://localhost:8080
 
 Change `calculator.url` to the address of your running Calculator service.
 
