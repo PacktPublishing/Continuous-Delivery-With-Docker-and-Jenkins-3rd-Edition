@@ -150,7 +150,7 @@ The [exercise1](exercise1) directory contains the source code for the `book-libr
 
 Install required Ruby dependencies.
 
-    $ gem install rest-client sinatra json
+    $ gem install rest-client sinatra json cucumber
 
 Check that the test fails.
 
