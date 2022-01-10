@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.hazelcast:hazelcast-all:5.0.2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'junit:junit:4.13'
 	testImplementation("io.cucumber:cucumber-java:7.2.0") 
