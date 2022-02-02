@@ -1,0 +1,8 @@
+---
+- hosts: web1
+  vars:
+    http_port: 8080
+  tasks:
+  - name: print port number
+    debug:
+      msg: "Port number: {{http_port}}"

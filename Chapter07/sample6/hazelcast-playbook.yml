@@ -1,0 +1,11 @@
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: run Hazelcast container
+    docker_container:
+      name: hazelcast
+      image: hazelcast/hazelcast
+      state: started
+      exposed_ports:
+      - 5701

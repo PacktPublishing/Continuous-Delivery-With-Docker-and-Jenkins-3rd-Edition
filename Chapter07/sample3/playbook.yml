@@ -1,0 +1,20 @@
+---
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure apache is at the latest version
+    apt: name=apache2 state=latest
+  - name: ensure apache is running
+    service: name=apache2 state=started enabled=yes
+  - name: copy configuration
+    copy:
+      src: foo.conf
+      dest: /etc/foo.conf
+    notify:
+    - restart apache
+  handlers:
+  - name: restart apache
+    service:
+      name: apache2
+      state: restarted

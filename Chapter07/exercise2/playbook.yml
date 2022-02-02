@@ -1,0 +1,37 @@
+---
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: install python-pip
+    apt:
+      name: python-pip
+      state: present
+  - name: install Flask
+    pip:
+      name: Flask
+  - name: create Hello directory
+    file:
+      path: /var/hello
+      state: directory
+  - name: copy Hello World starting script
+    copy:
+      src: hello.sh
+      dest: /var/hello/hello.sh
+      mode: a+x
+  - name: configure Hello as a service
+    file:
+      path: /etc/init.d/hello
+      state: link
+      force: yes
+      src: /var/hello/hello.sh
+  - name: copy Hello World Service
+    copy:
+      src: hello.py
+      dest: /var/hello/hello.py
+      mode: a+x
+  - name: start Hello
+    service:
+      name: hello
+      enabled: yes
+      state: started

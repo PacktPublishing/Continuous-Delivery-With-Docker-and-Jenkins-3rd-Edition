@@ -1,0 +1,29 @@
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: add Docker apt keys
+    apt_key:
+      keyserver: hkp://p80.pool.sks-keyservers.net:80
+      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+  - name: update apt
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+      state: present
+  - name: install Docker
+    apt:
+      name: docker-ce
+      update_cache: yes
+      state: present
+  - name: add admin to docker group
+    user:
+      name: admin
+      groups: docker
+      append: yes
+  - name: install python-pip
+    apt:
+      name: python-pip
+      state: present
+  - name: install docker-py
+    pip:
+      name: docker-py

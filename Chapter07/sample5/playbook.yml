@@ -1,0 +1,72 @@
+---
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    apt: 
+      name: default-jre
+      state: present
+      update_cache: yes
+  - name: create Hazelcast directory
+    file:
+      path: /var/hazelcast
+      state: directory
+  - name: download Hazelcast
+    get_url:
+      url: https://repo1.maven.org/maven2/com/hazelcast/hazelcast/3.12/hazelcast-3.12.jar
+      dest: /var/hazelcast/hazelcast.jar
+      mode: a+r
+  - name: copy Hazelcast starting script
+    copy:
+      src: hazelcast.sh
+      dest: /var/hazelcast/hazelcast.sh
+      mode: a+x
+  - name: configure Hazelcast as a service
+    file:
+      path: /etc/init.d/hazelcast
+      state: link
+      force: yes
+      src: /var/hazelcast/hazelcast.sh
+  - name: start Hazelcast
+    service:
+      name: hazelcast
+      enabled: yes
+      state: started
+- hosts: web2
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    apt:
+      name: default-jre
+      state: present
+      update_cache: yes
+  - name: create directory for Calculator
+    file:
+      path: /var/calculator
+      state: directory
+  - name: copy Calculator starting script
+    copy:
+      src: calculator.sh
+      dest: /var/calculator/calculator.sh
+      mode: a+x
+  - name: configure Calculator as a service
+    file:
+      path: /etc/init.d/calculator
+      state: link
+      force: yes
+      src: /var/calculator/calculator.sh
+  - name: copy Calculator
+    copy:
+      src: build/libs/calculator-0.0.1-SNAPSHOT.jar
+      dest: /var/calculator/calculator.jar
+      mode: a+x
+    notify:
+    - restart Calculator
+  handlers:
+  - name: restart Calculator
+    service:
+      name: calculator
+      enabled: yes
+      state: restarted
