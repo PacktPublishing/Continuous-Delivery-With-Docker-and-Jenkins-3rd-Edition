@@ -6,7 +6,7 @@
     community.docker.docker_container:
       name: hazelcast
       image: hazelcast/hazelcast
-      state: present
+      state: started
       exposed_ports:
       - 5701
       
