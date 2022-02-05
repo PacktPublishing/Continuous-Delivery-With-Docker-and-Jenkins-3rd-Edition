@@ -2,28 +2,21 @@
   become: yes
   become_method: sudo
   tasks:
-  - name: add Docker apt keys
+  - name: Install aptitude using apt
+    apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+  - name: Install required system packages
+    apt: name={{ item }} state=latest update_cache=yes
+    loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+  - name: Add Docker GPG apt Key
     apt_key:
-      keyserver: hkp://p80.pool.sks-keyservers.net:80
-      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-  - name: update apt
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Add Docker Repository
     apt_repository:
-      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+      repo: deb https://download.docker.com/linux/ubuntu focal stable
       state: present
-  - name: install Docker
-    apt:
-      name: docker-ce
-      update_cache: yes
-      state: present
-  - name: add admin to docker group
-    user:
-      name: admin
-      groups: docker
-      append: yes
-  - name: install python-pip
-    apt:
-      name: python-pip
-      state: present
-  - name: install docker-py
+  - name: Update apt and install docker-ce
+    apt: update_cache=yes name=docker-ce state=latest
+  - name: Install Docker Module for Python
     pip:
-      name: docker-py
+      name: docker
