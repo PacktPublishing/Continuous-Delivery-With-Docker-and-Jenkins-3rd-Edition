@@ -4,7 +4,7 @@
   tasks:
   - name: Install required packages
     apt:
-      name: {{ item }}
+      name: "{{ item }}"
       state: latest
       update_cache: yes
     loop:
