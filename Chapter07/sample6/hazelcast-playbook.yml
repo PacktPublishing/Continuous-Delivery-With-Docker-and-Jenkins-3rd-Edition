@@ -3,9 +3,10 @@
   become_method: sudo
   tasks:
   - name: run Hazelcast container
-    docker_container:
+    community.docker.docker_container:
       name: hazelcast
       image: hazelcast/hazelcast
-      state: started
+      state: present
       exposed_ports:
       - 5701
+      
