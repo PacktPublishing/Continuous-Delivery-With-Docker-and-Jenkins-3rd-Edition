@@ -80,7 +80,7 @@ In result, you deployed two dependent applications. You can test it by running t
 ### Code Sample 6: Ansible Docker playbook
 
 The [sample6](sample6) includes two playbooks:
- * `install-docker-playbook.yml`: playbook which installs Docker Community Edition on an Ubuntu 18.04 server
+ * `install-docker-playbook.yml`: playbook which installs Docker Community Edition on an Ubuntu 20.04 server
  * `hazelcast-playbook.yml`: playbook which starts Hazelcast Docker container on a server which has Docker Daemon running
 
  To install Docker Daemon on a server, run the following command.
@@ -92,6 +92,30 @@ If the command fails at some point, re-run it.
 Then, to start Hazelcast container, run the following command.
 
 	$ ansible-playbook hazelcast-playbook.yml
+
+### Code Sample 7: Terraform configuration
+
+The [sample7](sample7) includes a Terraform configuration to provision an AWS EC2 Instance.
+
+To configure AWS credentials, execute the following command.
+
+	$ aws configure
+
+Execute the following command to download all required Terraform providers.
+
+	$ terraform init
+
+Then, check the planned infrastructure changes.
+
+	$ terraform plan
+
+Finally, make the infrastructure changes with the following command.
+
+	$ terraform apply
+
+You can clean up the created resources with the following command.
+
+	$ terraform destroy
 
 ## Exercise solutions
 
