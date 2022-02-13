@@ -7,9 +7,9 @@
     apt:
       name: python3-pip
       state: present
-  - name: install python3-is-python
+  - name: use python3 by default
     apt:
-      name: python3-is-python
+      name: python-is-python3
       state: present
   - name: install Flask
     pip:
