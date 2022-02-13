@@ -1,11 +1,15 @@
 ---
 - hosts: web1
-  become: yes
+  become: true
   become_method: sudo
   tasks:
-  - name: install python-pip
+  - name: install python3-pip
     apt:
-      name: python-pip
+      name: python3-pip
+      state: present
+  - name: install python3-is-python
+    apt:
+      name: python3-is-python
       state: present
   - name: install Flask
     pip:
