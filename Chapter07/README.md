@@ -93,7 +93,7 @@ Then, to start Hazelcast container, run the following command.
 
 	$ ansible-playbook hazelcast-playbook.yml
 
-### Code Sample 7: Terraform configuration
+### Code Sample 7: Using Terraform configuration
 
 The [sample7](sample7) includes a Terraform configuration to provision an AWS EC2 Instance.
 
@@ -140,3 +140,26 @@ After that you should be able to call the Hello World service.
 	$ curl http://<web1-ip>:5000/hello
 	Hello World!
 
+### Exercise 3: Provision GCP VM Instance with Terraform
+
+The [exercise3](exercise3) includes a Terraform configuration to provision a GCP VM Instance.
+
+To configure GCP credentials execute the following command.
+
+	$ gcloud init
+
+Create GCP Credentials as described [here](https://console.cloud.google.com/iam-admin/serviceaccounts) and export them into an env variable called `GOOGLE_APPLICATION_CREDENTIALS`.
+
+	$ export GOOGLE_APPLICATION_CREDENTIALS=<path-to-your-credentials>
+
+Fill `<your-gcp-project>` in the `main.tf` file. Then, execute `terraform plan` to check the expected changes, and finally apply the Terraform configuration.
+
+	$ terraform apply
+
+Verify that the VM Instance is created with the following command.
+
+	$ gcloud compute instances list
+
+Clean up the infrastructure.
+
+	$ terraform destroy
