@@ -1,7 +1,7 @@
 # Chapter 8: Continuous Delivery Pipeline
 
 All the instructions assumes that you have:
-* Jenkins instance (with Java 8, Docker, and kubectl installed on Jenkins agents)
+* Jenkins instance (with Java 8+, Docker, and kubectl installed on Jenkins agents)
 * Docker registry (e.g. account on Docker Hub)
 * Two Kubernetes clusters (one available as the context `staging`, the other as `production`)
 * Build Timestamp Plugin installed in Jenkins (and timestamp format configured to contain no whitespaces)
