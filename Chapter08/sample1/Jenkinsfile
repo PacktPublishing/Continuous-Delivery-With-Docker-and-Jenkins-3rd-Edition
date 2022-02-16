@@ -54,7 +54,7 @@ pipeline {
 
           stage("Update version") {
                steps {
-                    sh "sed  -i 's/{{VERSION}}/${BUILD_TIMESTAMP}/g' calculator.yaml"
+                    sh "sed  -i 's/{{VERSION}}/${BUILD_TIMESTAMP}/g' deployment.yaml"
                }
           }
           
@@ -62,7 +62,8 @@ pipeline {
                steps {
                     sh "kubectl config use-context staging"
                     sh "kubectl apply -f hazelcast.yaml"
-                    sh "kubectl apply -f calculator.yaml"
+                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f service.yaml"
                }
           }
 
@@ -77,7 +78,8 @@ pipeline {
                steps {
                     sh "kubectl config use-context production"
                     sh "kubectl apply -f hazelcast.yaml"
-                    sh "kubectl apply -f calculator.yaml"
+                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f service.yaml"                    
                }
           }
           stage("Smoke test") {
