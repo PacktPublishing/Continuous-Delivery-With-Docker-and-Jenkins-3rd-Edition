@@ -10,7 +10,7 @@ plugins {
 	id 'java'
 	id 'jacoco'
 	id 'checkstyle'
-	id "org.flywaydb.flyway"
+	id "org.flywaydb.flyway" version "8.5.0"
 }
 
 group = 'com.leszko'
@@ -55,3 +55,8 @@ jacocoTestCoverageVerification {
           } 
      } 
 } 
+
+flyway { 
+   url = 'jdbc:h2:file:/tmp/calculator' 
+   user = 'sa' 
+}
