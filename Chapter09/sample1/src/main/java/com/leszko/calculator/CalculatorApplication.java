@@ -7,17 +7,9 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-@EnableCaching
 public class CalculatorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CalculatorApplication.class, args);
-	}
-
-	@Bean 
-	public ClientConfig hazelcastClientConfig() { 
-	   ClientConfig clientConfig = new ClientConfig(); 
-	   clientConfig.getNetworkConfig().addAddress("hazelcast"); 
-	   return clientConfig; 
 	}
 }
