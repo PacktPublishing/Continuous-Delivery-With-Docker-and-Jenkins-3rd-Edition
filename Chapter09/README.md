@@ -23,9 +23,9 @@ We can now make a call to our service.
 
 This should result in creating an entry in the database. You can check it by browsing the database at: http://localhost:8080/h2-console (use JDBC URL: `jdbc:h2:/tmp/calculator`).
 
-### Code Sample 2: Backwards-compatible Flyway migration
+### Code Sample 2: Backward-compatible Flyway migration
 
-The [sample2](sample2) includes a Calculator project together with the backwards-compatible Flyway migration.
+The [sample2](sample2) includes a Calculator project together with the backward-compatible Flyway migration.
 
 The migration adds a new column `CREATED_AT` to the `CALCULATION` table. The migration is defined in `src/main/resources/db/migration/V2__Add_created_at_column.sql`. To apply the migration, run the following command.
 
@@ -42,9 +42,9 @@ Make a new call to the service.
 
 Observe the new entry in the database.
 
-### Code Sample 3: Non-backwards-compatible Flyway migration
+### Code Sample 3: Non-backward-compatible Flyway migration
 
-The [sample3](sample3) includes a Calculator project together with the non-backwards-compatible Flyway migration (which renames of the table column).
+The [sample3](sample3) includes a Calculator project together with the non-backward-compatible Flyway migration (which renames of the table column).
 
 Renaming the column will be done in a few steps:
  1. Adding a new column in the database
@@ -58,7 +58,7 @@ The first steps are already included, you can check they work fine by executing 
 	$ ./gradlew flywayMigrate -i
 	$ ./gradlew bootRun
 
-Make a new call to the service and observe the entries in the database. Note that all the changes we did so far are backwards-compatible.
+Make a new call to the service and observe the entries in the database. Note that all the changes we did so far are backward-compatible.
 
 Let's create the data merging migration (`src/main/resources/db/migration/V4__Copy_result_into_sum_column.sql`), which will copy the old column data to the new one.
 
@@ -86,7 +86,7 @@ After running the migration and starting the service, observe again the database
 
 ## Exercise solutions
 
-### Exercise 1: Flyway to make non-backwards-compatible change in MySQL
+### Exercise 1: Flyway to make non-backward-compatible change in MySQL
 
 The [exercise1](exercise1) directory contains the initial Flyway migration.
 
