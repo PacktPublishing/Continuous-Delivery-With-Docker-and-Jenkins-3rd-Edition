@@ -18,7 +18,7 @@ public class Calculation {
  
    protected Calculation() {} 
  
-   public Calculation(String a, String b, String result, Timestamp createdAt) { 
+   public Calculation(String a, String b, String sum, Timestamp createdAt) { 
         this.a = a; 
         this.b = b; 
         this.sum = sum; 
