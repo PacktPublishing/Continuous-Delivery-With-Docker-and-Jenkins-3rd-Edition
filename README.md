@@ -1,10 +1,8 @@
 # Continuous-Delivery-With-Docker-and-Jenkins-3rd-Edition
-Continuous Delivery with Docker and Jenkins, 3rd Edition, published by Packt
-# About the Author
 
 <a href="https://www.packtpub.com/product/continuous-delivery-with-docker-and-jenkins-third-edition/9781803237480?utm_source=github&utm_medium=repository&utm_campaign=9781803237480"><img src="https://static.packt-cdn.com/products/9781803237480/cover/smaller" alt="About the Author" height="256px" align="right"></a>
 
-This is the code repository for [About the Author](https://www.packtpub.com/product/continuous-delivery-with-docker-and-jenkins-third-edition/9781803237480?utm_source=github&utm_medium=repository&utm_campaign=9781803237480), published by Packt.
+This is the code repository for [Continuous Delivery With Docker and Jenkins, 3rd Edition](https://www.packtpub.com/product/continuous-delivery-with-docker-and-jenkins-third-edition/9781803237480?utm_source=github&utm_medium=repository&utm_campaign=9781803237480), published by Packt.
 
 **Create secure applications by building complete CI/CD pipelines**
 
