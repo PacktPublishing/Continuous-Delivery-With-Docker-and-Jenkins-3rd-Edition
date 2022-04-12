@@ -10,14 +10,14 @@ This is the code repository for [Continuous Delivery With Docker and Jenkins, 3r
 This updated third edition of Continuous Delivery with Docker and Jenkins will explain the advantages of combining Jenkins and Docker to improve the continuous integration and delivery process of app development. 
 
 This book covers the following exciting features:
-Grasp Docker fundamentals and dockerize applications for the CD process
-Understand how to use Jenkins on-premises and in the cloud
-Scale a pool of Docker servers using Kubernetes
-Write acceptance tests using Cucumber
-Run tests in the Docker ecosystem using Jenkins
-Provision your servers and infrastructure using Ansible and Terraform
-Publish a built Docker image to a Docker registry
-Deploy cycles of Jenkins pipelines using community best practices
+* Grasp Docker fundamentals and dockerize applications for the CD process
+* Understand how to use Jenkins on-premises and in the cloud
+* Scale a pool of Docker servers using Kubernetes
+* Write acceptance tests using Cucumber
+* Run tests in the Docker ecosystem using Jenkins
+* Provision your servers and infrastructure using Ansible and Terraform
+* Publish a built Docker image to a Docker registry
+* Deploy cycles of Jenkins pipelines using community best practices
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1803237481) today!
 
