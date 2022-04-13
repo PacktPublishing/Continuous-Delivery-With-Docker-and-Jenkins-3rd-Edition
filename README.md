@@ -65,7 +65,7 @@ Click on following link to see the Code in Action:
 [Youtube link](https://bit.ly/3NSEPNA)
 
 ### Related products
-* About the Authors [[Packt]](https://www.packtpub.com/product/docker-for-developers/9781789536058?utm_source=github&utm_medium=repository&utm_campaign=9781789536058) [[Amazon]](https://www.amazon.com/dp/1789536057)
+* Docker for Developers [[Packt]](https://www.packtpub.com/product/docker-for-developers/9781789536058?utm_source=github&utm_medium=repository&utm_campaign=9781789536058) [[Amazon]](https://www.amazon.com/dp/1789536057)
 
 * About the Author [[Packt]](https://www.packtpub.com/product/learn-docker-fundamentals-of-docker-19-x-second-edition/9781838827472?utm_source=github&utm_medium=repository&utm_campaign=9781838827472) [[Amazon]](https://www.amazon.com/dp/1838827471)
 
