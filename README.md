@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B18223?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Continuous Delivery With Docker and Jenkins, 3rd Edition
 
 <a href="https://www.packtpub.com/product/continuous-delivery-with-docker-and-jenkins-third-edition/9781803237480?utm_source=github&utm_medium=repository&utm_campaign=9781803237480"><img src="https://static.packt-cdn.com/products/9781803237480/cover/smaller" alt="About the Author" height="256px" align="right"></a>
